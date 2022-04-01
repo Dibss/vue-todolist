@@ -30,7 +30,7 @@ li{list-style: none;}
 #todo-task{margin: 1em 0;}
 hr{margin-top: 1em; border-color: #dde1e6;}
 
-.fa-xmark{font-size: 1.2rem; cursor: pointer;}
-.fa-xmark:hover{
-  color: rgba(255, 0, 0, 0.74);
-}
+.fa-check,
+.fa-xmark{font-size: 1.2rem; cursor: pointer; margin-right: 0.5em;}
+.fa-check:hover{color: rgba(0, 128, 0, 0.74);}
+.fa-xmark:hover{color: rgba(255, 0, 0, 0.74);}

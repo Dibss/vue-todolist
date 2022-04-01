@@ -14,15 +14,18 @@
   <div id="root">
     <main class="container">
       <div class="text-center my-2">
-        <label><input class="add input" type="text" placeholder="Nuovo Todo"></label>
-        <button class="add btn" @click="">Aggiungi</button>
+        <label><input class="add input" type="text" placeholder="Nuovo Todo" id="newTodo" @keyup.enter="add()"></label>
+        <button class="add btn" @click="add()">Aggiungi</button>
       </div>
       <div id="list-container">
         <ul id="todo">
-          <li v-for="elm in todo" id="todo-task" :class="(todo.done == true)?'line-through':''">
+          <li v-for="(elm, i) in todo" id="todo-task">
             <div class="d-flex jc-between">
-              {{elm.text}}
-              <i class="fa-solid fa-xmark text-right" @click="taskDone()"></i>
+              <span :class="(elm.done == true) ? 'line-through' : ''">{{elm.text}}</span>
+              <div>
+                <i class="fa-solid fa-check" @click="taskDone(i)"></i>
+                <i class="fa-solid fa-xmark text-right" @click="deleteTask(i)"></i>
+              </div>
             </div>
             <hr>
           </li>
