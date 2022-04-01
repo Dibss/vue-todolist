@@ -28,7 +28,7 @@ var app = new Vue({
         done : false
       }
       // DA SISTEMARE SE L'ELEMENTO E' GIA STATO INSERITO
-      if(this.todo.includes(task)){
+      if(this.todo.includes(newTodo)){
         alert("Il task è già stato inserito");
       } else if(task == ""){
         alert("Non hai inserito nessun task!")
