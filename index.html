@@ -4,16 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>todolist</title>
+  <title>Todolist</title>
 </head>
 <body>
 
   <div id="root">
-    
+    <main class="container">
+      <div class="text-center my-2">
+        <label><input class="add input" type="text" placeholder="Nuovo Todo"></label>
+        <button class="add btn" @click="">Aggiungi</button>
+      </div>
+      <div id="list-container">
+        <ul id="todo">
+          <li v-for="elm in todo" id="todo-task" :class="(todo.done == true)?'line-through':''">
+            <div class="d-flex jc-between">
+              {{elm.text}}
+              <i class="fa-solid fa-xmark text-right" @click="taskDone()"></i>
+            </div>
+            <hr>
+          </li>
+        </ul>
+      </div>
+    </main>
   </div>
   
-  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'>
-  </script> <script type='text/javascript' src='./assets/js/main.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>
+  <script type='text/javascript' src='./assets/js/main.js'></script>
 </body>
 </html>
